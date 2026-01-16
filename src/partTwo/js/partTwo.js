@@ -1,15 +1,30 @@
-//II parte, refactorizar para hacer toggle, nos basaremos en lo que hicimos en el archivo partOne.js
-
 function changeColor(){
-    //Escribe tu código aquí
+    const container = document.getElementById('container') || document.querySelector('.container');
+    if (container) {
+        const currentColor = container.style.backgroundColor;
+       
+        if (currentColor === "darkblue") {
+            container.style.backgroundColor = "red";
+        } else {
+            container.style.backgroundColor = "darkblue";
+        }
+    }
 };
 
 function changeText(){
-    //Escribe tu código aquí
-};
+    const text = document.getElementById('text') || document.querySelector('.color');
+    if (text) {
+        if (text.textContent === "darkblue") {
+            text.textContent = "red";
+        } else {
+            text.textContent = "darkblue";
+        }
+    }
+}; 
 
 function changeStyles(){
-    //Escribe tu código aquí
+    changeColor();
+    changeText();
 };
 
 export {changeColor, changeText, changeStyles}
